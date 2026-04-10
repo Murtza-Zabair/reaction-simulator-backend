@@ -122,6 +122,9 @@ export class UsersService {
         user: process.env.SMTP_USER,
         pass: process.env.SMTP_PASS,
       },
+      tls: {
+        rejectUnauthorized: false,
+      },
     });
 
     const verifyUrl = `${process.env.FRONTEND_URL}/verify-email?token=${token}`;
